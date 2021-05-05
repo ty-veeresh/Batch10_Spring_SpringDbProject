@@ -1,0 +1,9 @@
+package comm.tyss.springdb.service.emp;
+
+import comm.tyss.springdb.beans.EmpInfoBean;
+
+public interface EmpService {
+	
+	public EmpInfoBean authenticate(Integer id, String pwd);
+
+}

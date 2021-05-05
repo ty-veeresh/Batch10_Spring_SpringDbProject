@@ -1,0 +1,9 @@
+package comm.tyss.springdb.dao;
+
+import comm.tyss.springdb.beans.EmpInfoBean;
+
+public interface EmpDao {
+	public EmpInfoBean authenticate(Integer id, String pwd);
+
+
+}

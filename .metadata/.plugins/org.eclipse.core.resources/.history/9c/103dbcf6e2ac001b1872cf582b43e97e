@@ -1,0 +1,11 @@
+package comm.tyss.springdb.service;
+
+import comm.tyss.springdb.beans.AdminInfoBean;
+import comm.tyss.springdb.beans.ItemBean;
+
+public interface AdminService {
+	
+	public AdminInfoBean authenticate(Integer aid, String aname);
+	public boolean addItem(ItemBean infoBean);
+
+}

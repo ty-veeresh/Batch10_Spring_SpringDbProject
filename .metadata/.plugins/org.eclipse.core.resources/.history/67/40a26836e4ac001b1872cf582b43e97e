@@ -1,0 +1,12 @@
+package comm.tyss.springdb.dao;
+
+import comm.tyss.springdb.beans.AdminInfoBean;
+import comm.tyss.springdb.beans.ItemBean;
+
+public interface AdminDao {
+	public AdminInfoBean authenticate(Integer id , String aname);
+
+	public ItemBean getEmpData(Integer id);
+
+	public boolean addItem(ItemBean infoBean);
+}

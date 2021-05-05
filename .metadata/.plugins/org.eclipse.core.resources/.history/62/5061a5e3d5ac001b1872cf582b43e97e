@@ -1,0 +1,7 @@
+package comm.tyss.springdb.dao;
+
+import comm.tyss.springdb.beans.AdminInfoBean;
+
+public interface AdminDao {
+	public AdminInfoBean authenticate(Integer aid , String aname);
+}

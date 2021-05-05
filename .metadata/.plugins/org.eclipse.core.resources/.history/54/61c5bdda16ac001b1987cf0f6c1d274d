@@ -1,0 +1,5 @@
+package comm.tyss.springdb.service.emp;
+
+public class EmpService {
+
+}

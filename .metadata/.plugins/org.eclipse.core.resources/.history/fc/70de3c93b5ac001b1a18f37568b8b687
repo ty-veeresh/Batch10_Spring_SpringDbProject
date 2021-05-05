@@ -1,0 +1,18 @@
+package comm.tyss.springdb.service.emp;
+
+import org.springframework.stereotype.Service;
+
+import comm.tyss.springdb.beans.EmpInfoBean;
+
+
+@Service
+public class EmpServiceImp implements EmpService{
+	EmpServiceImp dao;
+	@Override
+	public EmpInfoBean authenticate(Integer id, String pwd) {
+	
+		
+		return dao.authenticate(id, pwd);
+	}
+
+}

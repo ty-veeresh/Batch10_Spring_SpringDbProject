@@ -1,0 +1,5 @@
+package comm.tyss.springdb.beans;
+
+public class AdminInfoBean {
+
+}

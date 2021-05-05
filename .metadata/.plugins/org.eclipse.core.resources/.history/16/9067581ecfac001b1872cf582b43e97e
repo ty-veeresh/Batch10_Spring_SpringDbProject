@@ -1,0 +1,29 @@
+package comm.tyss.springdb.controler;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class AdminController {
+
+	@GetMapping("/empLogin")
+	public String getLoginPage() {
+		return "LoginPage";
+	}
+
+	@PostMapping("/empLogin")
+	public String authenticate( ModelMap map, HttpServletRequest request) {
+		String username = request.getParameter("aid");
+		String password = request.getParameter("aname");
+
+		map.addAttribute("user", username);
+		map.addAttribute("pwd", password);
+		return "home";
+	}//
+	
+	
+}

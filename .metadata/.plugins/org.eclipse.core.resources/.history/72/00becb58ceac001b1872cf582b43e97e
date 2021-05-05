@@ -1,0 +1,9 @@
+package comm.tyss.springdb.beans;
+
+import java.io.Serializable;
+
+public class AdminBean implements Serializable {
+
+	
+
+}

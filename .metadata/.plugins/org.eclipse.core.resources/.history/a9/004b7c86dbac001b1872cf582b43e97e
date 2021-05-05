@@ -1,0 +1,46 @@
+package comm.tyss.springdb.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+
+import comm.tyss.springdb.beans.AdminInfoBean;
+
+
+
+@Repository
+public class AdminDaoImpl implements AdminDao {
+
+	
+	AdminInfoBean adminInfoBean=null;
+	@Override
+	public AdminInfoBean authenticate(Integer id, String aname) {
+		try {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("springdb");
+			EntityManager manager = factory.createEntityManager();
+
+			String getData = "from AdminInfoBean where id=:id and aname=:aname";
+
+			Query query = manager.createQuery(getData);
+			query.setParameter("id", id);
+			query.setParameter("aname", aname);
+
+			adminInfoBean = (AdminInfoBean) query.getSingleResult();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
+		return 	adminInfoBean;
+	}
+	}
+
+	
+	
+	
+
+

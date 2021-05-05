@@ -1,0 +1,41 @@
+package comm.tyss.springdb.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+
+import comm.tyss.springdb.beans.EmpInfoBean;
+
+@Repository
+public class EmpDaoHibImpl implements EmpDao {
+	
+	
+
+	@Override
+	public EmpInfoBean authenticate(Integer id, String pwd) {
+
+		EmpInfoBean employeeInfoBean = null;
+		try {
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("springdb");
+			EntityManager manager = factory.createEntityManager();
+
+			String getData = "from EmployeeInfoBean where empId=:id and password=:pwd";
+
+			Query query = manager.createQuery(getData);
+			query.setParameter("id", id);
+			query.setParameter("pwd", pwd);
+
+			employeeInfoBean = (EmpInfoBean) query.getSingleResult();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
+		return employeeInfoBean;
+	}
+
+}

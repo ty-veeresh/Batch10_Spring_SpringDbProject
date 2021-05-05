@@ -1,0 +1,32 @@
+package comm.tyss.springdb.service.empservice;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class EmployeeServiceController {
+	
+	
+	@GetMapping("/emplogin")
+	public String getLoginPage(){
+		return "login";
+	}
+	
+//	@PostMapping("/empLogin")
+//	public String authenticate(Integer empId, String password, ModelMap map, HttpServletRequest request) {
+//		EmployeeInfoBean bean = service.authenticate(empId, password);
+//		if (bean != null) {
+//			System.out.println(" success login");
+//			HttpSession session = request.getSession(true);
+//			session.setAttribute("loggedInfo", bean);
+////			session.setMaxInactiveInterval(60);
+//			return "empHome";
+//		} else {
+//			System.out.println(" login failure");
+//			map.addAttribute("msg", " User Details Not Found");
+//			return "empLogin";
+//		}
+//	}//
+
+}
